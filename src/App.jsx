@@ -1,5 +1,9 @@
 import { Switch, Route } from 'react-router-dom';
+import Home from './views/Home/Home';
+import CharactersList from './views/Characters/List';
 import CharacterDetail from './views/Characters/Detail';
+
+
 export default function App() {
   return (
     <Switch>
@@ -7,7 +11,7 @@ export default function App() {
         <CharacterDetail />
       </Route>
       <Route exact path='/characters'>
-        <CharacterList />
+        <CharactersList />
       </Route>
       <Route exact path='/'>
         <Home />
