@@ -14,7 +14,6 @@ export default function CharactersList() {
     }
     callFetchCharacters();
   }, [])
-  console.log('characters!!!!', characters)
   
   return (
     <div className={styles['character-list']}>

@@ -14,7 +14,7 @@ export default function CharacterDetail() {
     }
     callFetchCharacterData();
   }, [id])
-  console.log('characterData', characterData.location?.name)
+  
   return (
     <div>
       <h3>{characterData.name}</h3>
