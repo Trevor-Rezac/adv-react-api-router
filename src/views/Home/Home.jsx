@@ -4,9 +4,8 @@ import styles from '../Home/Home.css';
 
 export default function Home() {
   return (
-    <>
-    <h1 className={styles['main-title']}>Rick and Morty Character Encyclopedia</h1>
-    <Link to='/characters'>View all characters</Link>
-    </>
+    <div>
+      <Link to='/characters' className={['character-link']}>View all characters</Link>
+    </div>
   )
 }
