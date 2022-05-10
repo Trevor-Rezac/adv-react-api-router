@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchCharacters } from '../../services/Characters/characters';
+import { fetchCharacterData, fetchCharacters } from '../../services/Characters/characters';
 import { Link } from 'react-router-dom';
 import CharacterCard from './Card';
 import styles from './List.css'
