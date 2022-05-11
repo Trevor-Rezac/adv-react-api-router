@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { fetchCharacterData } from '../../services/Characters/characters';
 
@@ -16,6 +16,7 @@ export default function CharacterDetail() {
   }, [id])
   
   return (
+    <>
     <div>
       <h3>{characterData.name}</h3>
       <img src={characterData.image} alt={`image of ${characterData.name}`}/>
@@ -24,5 +25,9 @@ export default function CharacterDetail() {
       <p>Status: {characterData.status}</p>
       <p>Location: {characterData.location?.name}</p>
     </div>
+    <div>
+      <Link to='/characters' className={['character-link']}>View all characters</Link>
+    </div>
+  </>
   )
 }

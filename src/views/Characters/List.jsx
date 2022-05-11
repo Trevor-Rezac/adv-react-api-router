@@ -6,6 +6,7 @@ import styles from './List.css'
 
 export default function CharactersList() {
   const [characters, setCharacters] = useState([]);
+  const [pageNumber, setPageNumber] = useState(1);
 
   useEffect(() => {
     const callFetchCharacters = async () => {
@@ -15,11 +16,40 @@ export default function CharactersList() {
     callFetchCharacters();
   }, [])
   
+  const handleNextClick = () => {
+    if(pageNumber === 42) {
+      () => {}
+    } else {
+      const nextPage = pageNumber + 1;
+    setPageNumber(nextPage)
+    console.log('nextPage!!!!', nextPage)
+
+    }
+  }
+
+  const handlePrevClick = () => {
+    if(pageNumber === 1) {
+      () => {}
+    } else {
+      const nextPage = pageNumber - 1;
+    setPageNumber(nextPage)
+    console.log('nextPage!!!!', nextPage)
+    }
+    
+  }
+
   return (
-    <div className={styles['character-list']}>
-    {characters.map((character) => <Link key={`${character.id}`} to={`/characters/${character.id}`}>
-      <CharacterCard character={character}/>
-    </Link>)}
+    <>
+    <div>
+      <button onClick={handlePrevClick}>Prev</button>
+      {`Page(${pageNumber})`}
+      <button onClick={handleNextClick}>Next</button>
     </div>
+    <div className={styles['character-list']}>
+      {characters.map((character) => <Link key={`${character.id}`} to={`/characters/${character.id}`}>
+        <CharacterCard character={character}/>
+      </Link>)}
+    </div>
+    </>
   )
 }
